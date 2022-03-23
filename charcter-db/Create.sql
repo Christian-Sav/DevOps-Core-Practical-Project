@@ -1,0 +1,32 @@
+CREATE DATABASE IF NOT EXISTS charchterdb;
+USE characterdb;
+CREATE TABLE IF NOT EXISTS charchters (
+    id INT AUTO_INCREMENT,
+    strength INT NOT NULL,
+    perception INT NOT NULL,
+    endurance INT NOT NULL,
+    charisma INT NOT NULL,
+    intelligence INT NOT NULL,
+    agility INT NOT NULL,
+    luck INT NOT NULL,
+    tag_1 VARCHAR(20) NOT NULL,
+    tag_2 VARCHAR(20) NOT NULL,
+    tag_3 VARCHAR(20) NOT NULL,
+    trait_1 VARCHAR(20) NOT NULL,
+    trait_2 VARCHAR(20) NOT NULL,
+    barter INT INT NOT NULL,
+    energy_weapons INT INT NOT NULL,
+    explosives INT INT NOT NULL,
+    guns INT INT NOT NULL,
+    lockpick INT INT NOT NULL,
+    medicine INT INT NOT NULL,
+    melee_weapons INT INT NOT NULL,
+    repair INT INT NOT NULL,
+    science INT INT NOT NULL,
+    sneak INT INT NOT NULL,
+    speech INT INT NOT NULL,
+    survival INT INT NOT NULL,
+    unarmed INT INT NOT NULL,
+    date_generated DATE NOT NULL,
+    PRIMARY KEY (id)
+);

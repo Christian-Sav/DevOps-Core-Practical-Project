@@ -28,13 +28,7 @@ services:
     build: ./perks-api
     deploy:
       replicas: 3
-  gender-api:
-    container_name: gender-api
-    image: chr1ss4v/gender-api:latest
-    build: ./gender-api
-    deploy:
-      replicas: 3
-stats-api:
+  stats-api:
     container_name: stats-api
     image: chr1ss4v/stats-api:latest
     build: ./stats-api
