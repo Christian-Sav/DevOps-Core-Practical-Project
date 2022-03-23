@@ -1,0 +1,36 @@
+version: "3.8"
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    ports:
+      - target: 80
+        published: 80
+    volumes:
+      - type: bind
+        source: ./nginx.conf
+        target: /etc/nginx/nginx.conf
+  front-end:
+    container_name: front-end
+    image: chr1ss4av/front-end:latest
+    build: ./front-end
+    environment:
+      PASSWORD: ${MYSQL_ROOT_PASSWORD}
+  special-api:
+    container_name: special-api
+    image: chr1ss4v/special-api:latest
+    build: ./special-api
+    deploy:
+      replicas: 3]
+  perks-api:
+    container_name: perks-api
+    image: chr1ss4v/perks-api:latest
+    build: ./perks-api
+    deploy:
+      replicas: 3
+  gender-api:
+    container_name: gender-api
+    image: chr1ss4v/gender-api:latest
+    build: ./gender-api
+    deploy:
+      replicas: 3
