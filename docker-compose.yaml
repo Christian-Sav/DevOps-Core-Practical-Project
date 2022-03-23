@@ -34,3 +34,9 @@ services:
     build: ./gender-api
     deploy:
       replicas: 3
+stats-api:
+    container_name: stats-api
+    image: chr1ss4v/stats-api:latest
+    build: ./stats-api
+    deploy:
+      replicas: 3
