@@ -14,8 +14,6 @@ services:
     container_name: front-end
     image: chr1ss4av/front-end:latest
     build: ./front-end
-    environment:
-      PASSWORD: ${MYSQL_ROOT_PASSWORD}
   special-api:
     container_name: special-api
     image: chr1ss4v/special-api:latest
