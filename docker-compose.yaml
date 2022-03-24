@@ -23,9 +23,9 @@ services:
     deploy:
       replicas: 3]
   perks-api:
-    container_name: perks-api
-    image: chr1ss4v/perks-api:latest
-    build: ./perks-api
+    container_name: traits-api
+    image: chr1ss4v/traits-api:latest
+    build: ./traits-api
     deploy:
       replicas: 3
   stats-api:
