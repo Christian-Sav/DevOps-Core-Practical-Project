@@ -14,13 +14,15 @@ services:
     container_name: front-end
     image: chr1ss4av/front-end:latest
     build: ./front-end
+    environment:
+      PASSWORD: ${MYSQL_ROOT_PASSWORD}
   special-api:
     container_name: special-api
     image: chr1ss4v/special-api:latest
     build: ./special-api
     deploy:
       replicas: 3]
-  perks-api:
+  traits-api:
     container_name: traits-api
     image: chr1ss4v/traits-api:latest
     build: ./traits-api
@@ -32,3 +34,9 @@ services:
     build: ./stats-api
     deploy:
       replicas: 3
+  tags-api:
+    container_name: tags-api
+    image: chr1ss4v/tags-api:latest
+    build: ./tags-api
+    deploy:
+      replicas: 3  
