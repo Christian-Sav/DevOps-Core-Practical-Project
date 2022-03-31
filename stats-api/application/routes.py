@@ -1,5 +1,5 @@
 from application import app
-from flask import request
+from flask import request, jsonify
 from math import ceil
 
 @app.route('/get-stats', methods = ['POST'])
@@ -69,19 +69,19 @@ def stats():
     elif luck > 10:
         luck = 10
 
-    barter = (2 + (2*charisma) + ceil.(luck/2))
-    energy_weapons = (2 + (2*perception) + ceil.(luck/2))
-    explosives = (2 + (2*perception) + ceil.(luck/2))
-    guns = (2 + (2*agility) + ceil.(luck/2))
-    lockpick = (2 + (2*perception) + ceil.(luck/2))
-    medicine = (2 + (2*intelligence) + ceil.(luck/2))
-    melee = (2 + (2*strength) + ceil.(luck/2))
-    repair = (2 + (2*intelligence) + ceil.(luck/2))
-    science = (2 + (2*intelligence) + ceil.(luck/2))
-    sneak = (2 + (2*agility) + ceil.(luck/2))
-    speech = (2 + (2*charisma) + ceil.(luck/2))
-    survival = (2 + (2*endurance) + ceil.(luck/2))
-    unarmed = (2 + (2*endurance) + ceil.(luck/2))
+    barter = (2 + (2*charisma) + ceil(luck/2))
+    energy_weapons = (2 + (2*perception) + ceil(luck/2))
+    explosives = (2 + (2*perception) + ceil(luck/2))
+    guns = (2 + (2*agility) + ceil(luck/2))
+    lockpick = (2 + (2*perception) + ceil(luck/2))
+    medicine = (2 + (2*intelligence) + ceil(luck/2))
+    melee = (2 + (2*strength) + ceil(luck/2))
+    repair = (2 + (2*intelligence) + ceil(luck/2))
+    science = (2 + (2*intelligence) + ceil(luck/2))
+    sneak = (2 + (2*agility) + ceil(luck/2))
+    speech = (2 + (2*charisma) + ceil(luck/2))
+    survival = (2 + (2*endurance) + ceil(luck/2))
+    unarmed = (2 + (2*endurance) + ceil(luck/2))
     
     if tag_1 or tag_2 or tag_3 == barter:
         barter = (barter + 15)
@@ -134,3 +134,6 @@ def stats():
         speech = (speech + 5)
         survival = (survival + 5)
         unarmed = (unarmed + 5)
+    
+    return jsonify( barter=barter, energy_weapons=energy_weapons, explosives = explosives, guns=guns, lockpick=lockpick, medicine=medicine, melee=melee,\
+        repair=repair, science=science, sneak=sneak, speech=speech, survival=survival, unarmed=unarmed)
