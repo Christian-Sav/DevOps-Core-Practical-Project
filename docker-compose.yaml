@@ -1,4 +1,9 @@
 version: "3.8"
+networks: 
+  project-network:
+    driver: overlay - uncomment on deployment
+volumes:
+  stats-vol:
 services:
   nginx:
     container_name: nginx
@@ -10,33 +15,67 @@ services:
       - type: bind
         source: ./nginx.conf
         target: /etc/nginx/nginx.conf
+    networks:
+    - 'project-network'
+    depends_on:
+    - 'front-end'
   front-end:
     container_name: front-end
     image: chr1ss4av/front-end:latest
     build: ./front-end
     environment:
       PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    networks:
+    - 'project-network'
+    depends_on:
+    - mysql
+    - special-api
+    - traits-api
+    - tags-api
+    - stats-api
+  mysql:
+    container_name: mysql
+    image: chr1ss4v/stat-db:latest
+    build: ./stat-db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: stat-db
+    volumes:
+      - type: volume
+        source: stats-vol
+        target: /var/lib/mysql
+    networks:
+      - 'project-network'
   special-api:
     container_name: special-api
     image: chr1ss4v/special-api:latest
     build: ./special-api
     deploy:
-      replicas: 3]
+      replicas: 3
+    networks:
+    - 'project-network'
   traits-api:
     container_name: traits-api
     image: chr1ss4v/traits-api:latest
     build: ./traits-api
     deploy:
       replicas: 3
+    networks:
+    - 'project-network'
   stats-api:
     container_name: stats-api
     image: chr1ss4v/stats-api:latest
     build: ./stats-api
     deploy:
       replicas: 3
+    networks:
+    - 'project-network'
   tags-api:
     container_name: tags-api
     image: chr1ss4v/tags-api:latest
     build: ./tags-api
     deploy:
-      replicas: 3  
+      replicas: 3
+    networks:
+    - 'project-network'
+
