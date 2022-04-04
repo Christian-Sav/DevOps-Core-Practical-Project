@@ -1,6 +1,6 @@
 CREATE DATABASE IF NOT EXISTS stat_db;
 USE stat_db;
-CREATE TABLE IF NOT EXISTS stats (
+CREATE TABLE IF NOT EXISTS build (
     id INT AUTO_INCREMENT,
     strength INT NOT NULL,
     perception INT NOT NULL,
