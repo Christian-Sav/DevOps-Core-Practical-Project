@@ -1,0 +1,20 @@
+---
+# tasks file for nginx
+- name: install NGINX
+  apt:
+    name: nginx
+    state: present
+    update_cache: true
+  register: nginx_info
+- name: install nginx.conf
+  template:
+    src: nginx.conf
+    dest: /etx/nginx/nginx.conf
+- name: restarting NGINX service
+  service:
+    name: nginx
+    state: restarted
+- name: print nginx info
+  debug:
+    msg: "{{ nginx_info }}"
+  wehn: "nginx_info['failed' == true"

@@ -20,7 +20,7 @@ all:
           ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
     devvm:
       hosts:
-        localhost:
+        dev:
           ansible_user: chris-sav
           ansible_ssh_private_key_file: /home/chris_sav/.ssh/id_rsa
           ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
