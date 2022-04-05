@@ -21,7 +21,7 @@ services:
     - 'front-end'
   front-end:
     container_name: front-end
-    image: chr1ss4av/front-end:latest
+    image: chr1ss4v/front-end:latest
     build: ./front-end
     environment:
       PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -35,11 +35,11 @@ services:
     - stats-api
   mysql:
     container_name: mysql
-    image: chr1ss4v/stat_db:latest
-    build: ./stat_db
+    image: chr1ss4v/build-db:latest
+    build: ./build-db
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: stat_db
+      MYSQL_DATABASE: build-db
     volumes:
       - type: volume
         source: stats-vol

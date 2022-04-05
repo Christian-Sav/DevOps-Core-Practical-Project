@@ -48,10 +48,3 @@
   - swarm-worker
   vars:
     docker_user: chr1ss4v
-
-- hosts: loadbalancer
-  become: true
-  roles:
-  - docker
-  vars:
-    docker_user: chr1ss4v
