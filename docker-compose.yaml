@@ -1,7 +1,7 @@
 version: "3.8"
 networks: 
   project-network:
-    driver: overlay - uncomment on deployment
+    driver: overlay
 volumes:
   stats-vol:
 services:
