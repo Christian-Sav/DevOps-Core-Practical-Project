@@ -137,5 +137,4 @@ def stats():
         unarmed = (unarmed + 5)
     
     return jsonify( barter=barter, energy_weapons=energy_weapons, explosives = explosives, guns=guns, lockpick=lockpick, medicine=medicine, melee_weapons=melee_weapons,\
-        repair=repair, science=science, sneak=sneak, speech=speech, survival=survival, unarmed=unarmed, strength = strength,perception=perception, \
-        endurance=endurance, charisma=charisma, intelligence=intelligence, agility=agility, luck=luck)
+        repair=repair, science=science, sneak=sneak, speech=speech, survival=survival, unarmed=unarmed, trait_1 = trait_1, trait_2 = trait_2)
