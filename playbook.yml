@@ -8,7 +8,7 @@
   - name: create git dir
     file:
       state: directory
-      path: /home/chris_sav/Practical_Project
+      path: /home/chris_sav/DevOps-Core-Practical-Project
   - name: clone repo
     git:
       repo: https://github.com/Christian-Sav/DevOps-Core-Practical-Project.git
