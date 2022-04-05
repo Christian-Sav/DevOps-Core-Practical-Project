@@ -11,10 +11,12 @@ def index():
     stats = requests.post('http://stats-api:5000/get-stats', json=dict(strength=special.json()["strength"], perception=special.json()["perception"], endurance=special.json()["endurance"], \
          charisma=special.json()["charisma"], intelligence=special.json()["intelligence"], agility=special.json()["agility"], \
          luck=special.json()["luck"], trait_1=traits.json()["trait_1"], trait_2=traits.json()["trait_2"], tag_1=tags.json()["tag_1"], tag_2=tags.json()["tag_2"], tag_3=tags.json()["tag_3"] ))
-    build = Build(barter = stats.barter, energy_weapons= stats.energy_weapons, explosives = stats.explosives, guns = stats.guns, lockpick = stats.lockpick, medicine = stats.medicine, \
-        melee = stats.melee, repair = stats.repair, science = stats.science, sneak = stats.sneak, speech = stats.speech, survival = stats.survival, unarmed = stats.unarmed, \
-        strength = stats.strength, perception = stats.perception, endurance = stats.endurance, charisma = stats.charisma, intelligence = stats.intelligence, agility = stats.agility, \
-        luck = stats.luck, tag_1 = tags.tag_1, tag_2 = tags.tag_2, tag_3 = tags.tag_3, trait_1 = traits.trait_1, trait_2 = traits.trait_2)
+    build = Build(barter = stats.json()["barter"], energy_weapons= stats.json()["energy_weapons"], explosives = stats.json()["explosives"], guns = stats.json()["guns"], \
+        lockpick = stats.json()["lockpick"], medicine = stats.json()["medicine"], melee = stats.json()["melee"], repair = stats.json()["repair"], science = stats.json()["science"],\
+        sneak = stats.json()["sneak"], speech = stats.json()["speech"], survival = stats.json()["survival"], unarmed = stats.json()["unarmed"], strength = stats.json()["strength"], \
+        perception = stats.json()["perception"], endurance = stats.json()["endurance"], charisma = stats.json()["charisma"], intelligence = stats.json()["intelligence"], \
+        agility = stats.json()["agility"], luck = stats.json()["luck"], tag_1 = tags.json()["tag_1"], tag_2 = tags.json()["tag_2"], tag_3 = tags.json()["tag_3"], \
+         trait_1 = traits.json()["trait_1"], trait_2 = traits.json()["trait_2"])
     db.session.add(build)
     db.session.commit
     return render_template('index.html', build = build)
