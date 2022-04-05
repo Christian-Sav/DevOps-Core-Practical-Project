@@ -35,7 +35,7 @@
   tasks:
   - name: add ansible user to docker group
     user:
-      name: chris-sav
+      name: chris_sav
       groups: docker
       append: yes
   vars:
