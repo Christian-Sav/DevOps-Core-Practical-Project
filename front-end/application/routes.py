@@ -12,7 +12,7 @@ def index():
          charisma=special.json()["charisma"], intelligence=special.json()["intelligence"], agility=special.json()["agility"], \
          luck=special.json()["luck"], trait_1=traits.json()["trait_1"], trait_2=traits.json()["trait_2"], tag_1=tags.json()["tag_1"], tag_2=tags.json()["tag_2"], tag_3=tags.json()["tag_3"] ))
     build = Build(barter = stats.json()["barter"], energy_weapons= stats.json()["energy_weapons"], explosives = stats.json()["explosives"], guns = stats.json()["guns"], \
-        lockpick = stats.json()["lockpick"], medicine = stats.json()["medicine"], melee = stats.json()["melee"], repair = stats.json()["repair"], science = stats.json()["science"],\
+        lockpick = stats.json()["lockpick"], medicine = stats.json()["medicine"], melee_weapons = stats.json()["melee_weapons"], repair = stats.json()["repair"], science = stats.json()["science"],\
         sneak = stats.json()["sneak"], speech = stats.json()["speech"], survival = stats.json()["survival"], unarmed = stats.json()["unarmed"], strength = stats.json()["strength"], \
         perception = stats.json()["perception"], endurance = stats.json()["endurance"], charisma = stats.json()["charisma"], intelligence = stats.json()["intelligence"], \
         agility = stats.json()["agility"], luck = stats.json()["luck"], tag_1 = tags.json()["tag_1"], tag_2 = tags.json()["tag_2"], tag_3 = tags.json()["tag_3"], \

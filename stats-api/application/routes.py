@@ -75,7 +75,7 @@ def stats():
     guns = (2 + (2*agility) + ceil(luck/2))
     lockpick = (2 + (2*perception) + ceil(luck/2))
     medicine = (2 + (2*intelligence) + ceil(luck/2))
-    melee = (2 + (2*strength) + ceil(luck/2))
+    melee_weapons = (2 + (2*strength) + ceil(luck/2))
     repair = (2 + (2*intelligence) + ceil(luck/2))
     science = (2 + (2*intelligence) + ceil(luck/2))
     sneak = (2 + (2*agility) + ceil(luck/2))
@@ -95,8 +95,8 @@ def stats():
         lockpick = (lockpick + 15)
     elif tag_1 or tag_2 or tag_3 == medicine:
         medicine = (medicine + 15)
-    elif tag_1 or tag_2 or tag_3 == melee:
-        melee = (melee + 15)
+    elif tag_1 or tag_2 or tag_3 == melee_weapons:
+        melee_weapons = (melee_weapons + 15)
     elif tag_1 or tag_2 or tag_3 == repair:
         repair = (repair + 15)
     elif tag_1 or tag_2 or tag_3 == science:
@@ -119,7 +119,7 @@ def stats():
         energy_weapons = (energy_weapons - 5)
         explosives = (explosives - 5)
         guns = (guns - 5)
-        melee = (melee - 5)
+        melee_weapons = (melee_weapons - 5)
     elif trait_1 or trait_2 == 'skilled' :
         barter = (barter + 5)
         energy_weapons = (energy_weapons + 5)
@@ -127,7 +127,7 @@ def stats():
         guns = (guns + 5)
         lockpick = (lockpick + 5)
         medicine = (medicine + 5)
-        melee = (melee + 5)
+        melee_weapons = (melee_weapons + 5)
         repair = (repair + 5)
         science = (science + 5)
         sneak = (sneak + 5)
@@ -135,6 +135,6 @@ def stats():
         survival = (survival + 5)
         unarmed = (unarmed + 5)
     
-    return jsonify( barter=barter, energy_weapons=energy_weapons, explosives = explosives, guns=guns, lockpick=lockpick, medicine=medicine, melee=melee,\
+    return jsonify( barter=barter, energy_weapons=energy_weapons, explosives = explosives, guns=guns, lockpick=lockpick, medicine=medicine, melee_weapons=melee_weapons,\
         repair=repair, science=science, sneak=sneak, speech=speech, survival=survival, unarmed=unarmed, strength = strength,perception=perception, \
         endurance=endurance, charisma=charisma, intelligence=intelligence, agility=agility, luck=luck)
