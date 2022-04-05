@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h2 style="color: rgb(255,182,65)"> History </h2>
+<br>
+
+{% for event in builds_history %}
+<h4 style="color: rgb(255,182,65)">{{ build }}</h4>
+
+<br>
+{% endfor %}
+{% endblock body %}
