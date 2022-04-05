@@ -28,7 +28,7 @@
     update_cache: true
 - name: add user to docker group
   user: 
-    name: chris-sav
+    name: notascene
     groups: docker
     append: yes
 - name: install docker pip dependency

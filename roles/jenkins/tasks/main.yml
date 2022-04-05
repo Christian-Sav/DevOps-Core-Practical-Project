@@ -1,47 +1,10 @@
 ---
 # tasks file for jenkins
-- name: create jenkins user
+- name: generate ssh key pair
   user:
     name: jenkins
-    state: present
-    create_home: yes
-    shell: /bin/bash
-- name: add jenkins to sudoers
-  lineinfile:
-    dest: /etc/sudoers
-    state: present 
-    regexp: '^jenkins'
-    line: 'jenkins ALL=(ALL:ALL) NOPASSWD: ALL'
-    validate: 'visudo -cf %s'
-- name: Install Java
-  apt:
-    name: openjdk-8-jre
-    state: latest
-    update_cache: true
-- name: ensure the jenkins apt repository is installed
-  apt_key:
-    url: https://pkg.jenkins.io/debian-stable/jenkins.io.key
-    state: present
-- name: ensure repository is configured
-  apt_repository:
-    repo: 'deb https://pkg.jenkins.io/debian-stable binary/'
-    state: present
-- name: ensure jenkins is installed
-  apt:
-    name: jenkins
-    state: present
-    update_cache: true 
-- name: ensure jenkins is running
-  service:
-    name: jenkins
-    state: started
-- name: wait for init admin password
-  wait_for:
-    path: /var/lib/jenkins/secrets/initialAdminPassword
-- name: get init admin password
-  command: 
-    cmd: cat /var/lib/jenkins/secrets/initialAdminPassword
-  register: init_password
-- name: display password
-  debug:
-    msg: "{{ init_password }}"
+    generate_ssh_key: yes
+- name: get pubkey
+  command:
+    cmd: cat /home/jenkins/.ssh/id_rsa.pub
+  register: jenks_pubkey
