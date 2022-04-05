@@ -40,7 +40,8 @@ def stats():
         perception = (perception - 1)
     elif trait_1 or trait_2 == 'Small_Frame':
         agility = (agility + 1)
-    elif strength < 1:
+
+    if strength < 1:
         strength = 1
     elif strength > 10:
         strength = 10
