@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS stat_db;
+USE stat_db;
+CREATE TABLE IF NOT EXISTS build (
+    id INT AUTO_INCREMENT,
+    strength INT NOT NULL,
+    perception INT NOT NULL,
+    endurance INT NOT NULL,
+    charisma INT NOT NULL,
+    intelligence INT NOT NULL,
+    agility INT NOT NULL,
+    luck INT NOT NULL,
+    tag_1 VARCHAR(20) NOT NULL,
+    tag_2 VARCHAR(20) NOT NULL,
+    tag_3 VARCHAR(20) NOT NULL,
+    trait_1 VARCHAR(20) NOT NULL,
+    trait_2 VARCHAR(20) NOT NULL,
+    barter INT NOT NULL,
+    energy_weapons INT NOT NULL,
+    explosives INT NOT NULL,
+    guns INT NOT NULL,
+    lockpick INT NOT NULL,
+    medicine INT NOT NULL,
+    melee_weapons INT NOT NULL,
+    repair INT NOT NULL,
+    science INT NOT NULL,
+    sneak INT NOT NULL,
+    speech INT NOT NULL,
+    survival INT NOT NULL,
+    unarmed INT NOT NULL,
+    PRIMARY KEY (id)
+); 
