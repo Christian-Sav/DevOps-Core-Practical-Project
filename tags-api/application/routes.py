@@ -4,7 +4,7 @@ from random import choice
 
 stats = ("Barter", "Energy_Weapons", "Explosives", "Guns", "Lockpick", "Medicine", "Melee_Weapons", "Repair", "Science", "Sneak", "Speech", "Survival", "Unarmed")
 
-@app.route('/get_tags', methods=['GET'])
+@app.route('/get-tags', methods=['GET'])
 def get_tags():
 
     tag_1 = choice(stats)
