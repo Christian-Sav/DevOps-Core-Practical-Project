@@ -1,14 +1,14 @@
 pipeline {
     agent any
     stages {
-        // stage('test') {
-        //     steps {
-        //         dir('flask-app') {
-        //             sh "rm application/tests/test_int*"
-        //             sh "bash test_basic.sh"
-        //         }
-        //     }
-        // }  
+        stage('test') {
+            steps {
+                dir('flask-app') {
+                    sh "rm application/tests/test_int*"
+                    sh "bash test.sh"
+                }
+            }
+        }  
         stage('build and push') {
             environment {
                 DOCKER_CREDS = credentials('docker_creds')
@@ -28,9 +28,9 @@ pipeline {
             }
         }
     }
-    // post {
-    //     always {
-    //         archiveArtifacts artifacts: "*/htmlcov/*"
-    //     }
-    // } 
+    post {
+        always {
+            archiveArtifacts artifacts: "*/htmlcov/*"
+        }
+    } 
 }

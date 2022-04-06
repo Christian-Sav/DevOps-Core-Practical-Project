@@ -1,14 +1,9 @@
 {% extends 'layout.html' %}
 {% block body %}
-<h1 style="color: rgb(255,182,65)"> Home </h1>
+<h1 style="color: rgb(255,182,65)"> This Build: </h1>
 <br>
-<h2 style="color: rgb(255,182,65)"> This Build: </h2>
-<br>
-
 {% for stat in build.__str__().split('\n')  %}
-<p style="color: rgb(255,182,65); font-size:12px;" >{{stat}}</p>
+<p style="color: rgb(255,182,65); font: size 18px;" >{{stat}}</p>
 <br>
-
 {% endfor %}
-
 {% endblock body %}
