@@ -19,10 +19,10 @@ def index():
          trait_1 = stats.json()["trait_1"], trait_2 = stats.json()["trait_2"])
     db.session.add(build)
     db.session.commit
-    last5 = Build.query.order_by(Build.id.desc()).limit(5).all()
-    return render_template('index.html', build = build, last5 = last5)
+    # last5 = Build.query.order_by(Build.id.desc()).limit(5).all()
+    return render_template('index.html', build = build )
 
-@app.route('/history', methods=['GET'])
-def history():
-    build_history = Build.query.all()
-    return render_template('history.html', builds_history = build_history)
+# @app.route('/history', methods=['GET'])
+# def history():
+#     build_history = Build.query.all()
+#     return render_template('history.html', builds_history = build_history)
