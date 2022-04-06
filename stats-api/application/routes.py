@@ -104,32 +104,34 @@ def stats():
     
 #calculating stats
 
-    if st_tag_1 or st_tag_2 or st_tag_3 == 'Barter':
+    if st_tag_1 or st_tag_2 or st_tag_3 == "Barter":
         barter = (barter + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == 'Energy_Weapons':
+    elif st_tag_1 or st_tag_2 or st_tag_3 == "Energy_Weapons":
         energy_weapons = (energy_weapons + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == 'Explosives':
+    elif st_tag_1 or st_tag_2 or st_tag_3 == "Explosives":
         explosives = (explosives + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == 'Guns':
+    elif st_tag_1 or st_tag_2 or st_tag_3 == "Guns":
         guns = (guns + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == 'Lockpick':
+    elif st_tag_1 or st_tag_2 or st_tag_3 == "Lockpick":
         lockpick = (lockpick + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == 'Medicine':
+    elif st_tag_1 or st_tag_2 or st_tag_3 == "Medicine":
         medicine = (medicine + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == 'Melee_Weapons':
+    elif st_tag_1 or st_tag_2 or st_tag_3 == "Melee_Weapons":
         melee_weapons = (melee_weapons + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == 'Repair':
+    elif st_tag_1 or st_tag_2 or st_tag_3 == "Repair":
         repair = (repair + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == 'Science':
+    elif st_tag_1 or st_tag_2 or st_tag_3 == "Science":
         science = (science + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == 'Sneak':
+    elif st_tag_1 or st_tag_2 or st_tag_3 == "Sneak":
         sneak = (sneak + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == 'Speech':
+    elif st_tag_1 or st_tag_2 or st_tag_3 == "Speech":
         speech = (speech + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == 'Survival':
+    elif st_tag_1 or st_tag_2 or st_tag_3 == "Survival":
         survival = (survival + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == 'Unarmed':
+    elif st_tag_1 or st_tag_2 or st_tag_3 == "Unarmed":
         unarmed = (unarmed + 15)
+    else:
+        barter = barter
 
 # adding traits to stats
 
