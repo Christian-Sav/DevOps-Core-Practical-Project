@@ -2,6 +2,11 @@ from application import app
 from flask import jsonify
 import random
 
+
+
+
+@app.route('/get-special', methods=['GET'])
+
 SpecialDict = {
     'Strength' : 1,
     'Perception' : 1,
@@ -67,9 +72,7 @@ def PrintSpecial(PointsList):
     for i in range(len(SpecialNameList)):
         SpecialDict[SpecialNameList[i]] = PointList[i]
         print(SpecialNameList[i] + ': ' + str(SpecialDict[SpecialNameList[i]]))
-
-
-@app.route('/get-special', methods=['GET'])
+        
 def get_special():
 
     strength = SpecialDict["Strength"]
