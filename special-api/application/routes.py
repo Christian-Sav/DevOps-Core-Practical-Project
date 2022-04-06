@@ -54,7 +54,7 @@ def ChangeSpecial(PointList): #changes the points if there are to mant
                 PointList[i] =+ 1
         PrintSpecial(PointList)
     
-def PrintSpecial(PointsList):
+def PrintSpecial(PointList):
     for i in range(len(SpecialNameList)):
         SpecialDict[SpecialNameList[i]] = PointList[i]
 
