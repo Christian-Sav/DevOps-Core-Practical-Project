@@ -5,7 +5,7 @@
 <h2 style="color: rgb(255,182,65)"> This Build: </h2>
 <br>
 
-<h4 style="color: rgb(255,182,65)">{{ build }}</h4>
+<h4 style="color: rgb(255,182,65)">{{ build.__str__().replace('\n', '<br>') }}</h4>
 
 <br>
 {% endblock body %}

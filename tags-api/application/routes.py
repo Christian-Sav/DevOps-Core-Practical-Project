@@ -2,7 +2,7 @@ from application import app
 from flask import jsonify
 from random import choices
 
-stats = set(["barter", "energy_weapons", "explosives", "guns", "lockpick", "medicine", "melee", "repair", "science", "sneak", "speech", "survival", "unarmed"])
+stats = set(["barter", "energy_weapons", "explosives", "guns", "lockpick", "medicine", "melee_weapons", "repair", "science", "sneak", "speech", "survival", "unarmed"])
 stats_2  = choices(list(stats), k=3)
 
 @app.route('/get-tags', methods=['GET'])
