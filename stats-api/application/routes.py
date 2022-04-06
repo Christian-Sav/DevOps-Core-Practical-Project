@@ -19,7 +19,7 @@ def stats():
     tag_3 = request_data['tag_3']
 
     if trait_1 == trait_2:
-        trait_2 == 'None'
+        trait_2 == "None"
     elif trait_1 or trait_2 == 'Claustrophobia':
         strength = (strength + 1)
         perception = (perception + 1)
@@ -84,31 +84,31 @@ def stats():
     survival = (2 + (2*endurance) + ceil(luck/2))
     unarmed = (2 + (2*endurance) + ceil(luck/2))
     
-    if tag_1 or tag_2 or tag_3 == barter:
+    if tag_1 or tag_2 or tag_3 == 'Barter':
         barter = (barter + 15)
-    elif tag_1 or tag_2 or tag_3 == energy_weapons:
+    elif tag_1 or tag_2 or tag_3 == 'Energy_Weapons':
         energy_weapons = (energy_weapons + 15)
-    elif tag_1 or tag_2 or tag_3 == explosives:
+    elif tag_1 or tag_2 or tag_3 == 'Explosives':
         explosives = (explosives + 15)
-    elif tag_1 or tag_2 or tag_3 == guns:
+    elif tag_1 or tag_2 or tag_3 == 'Guns':
         guns = (guns + 15)
-    elif tag_1 or tag_2 or tag_3 == lockpick:
+    elif tag_1 or tag_2 or tag_3 == 'Lockpick':
         lockpick = (lockpick + 15)
-    elif tag_1 or tag_2 or tag_3 == medicine:
+    elif tag_1 or tag_2 or tag_3 == 'Medicine':
         medicine = (medicine + 15)
-    elif tag_1 or tag_2 or tag_3 == melee_weapons:
+    elif tag_1 or tag_2 or tag_3 == 'Melee_Weapons':
         melee_weapons = (melee_weapons + 15)
-    elif tag_1 or tag_2 or tag_3 == repair:
+    elif tag_1 or tag_2 or tag_3 == 'Repair':
         repair = (repair + 15)
-    elif tag_1 or tag_2 or tag_3 == science:
+    elif tag_1 or tag_2 or tag_3 == 'Science':
         science = (science + 15)
-    elif tag_1 or tag_2 or tag_3 == sneak:
+    elif tag_1 or tag_2 or tag_3 == 'Sneak':
         sneak = (sneak + 15)
-    elif tag_1 or tag_2 or tag_3 == speech:
+    elif tag_1 or tag_2 or tag_3 == 'Speech':
         speech = (speech + 15)
-    elif tag_1 or tag_2 or tag_3 == survival:
+    elif tag_1 or tag_2 or tag_3 == 'Survival':
         survival = (survival + 15)
-    elif tag_1 or tag_2 or tag_3 == unarmed:
+    elif tag_1 or tag_2 or tag_3 == 'Unarmed':
         unarmed = (unarmed + 15)
 
     if trait_1 or trait_2 == 'Good_Natured' :
@@ -121,7 +121,7 @@ def stats():
         explosives = (explosives - 5)
         guns = (guns - 5)
         melee_weapons = (melee_weapons - 5)
-    elif trait_1 or trait_2 == 'skilled' :
+    elif trait_1 or trait_2 == 'Skilled' :
         barter = (barter + 5)
         energy_weapons = (energy_weapons + 5)
         explosives = (explosives + 5)
@@ -136,5 +136,5 @@ def stats():
         survival = (survival + 5)
         unarmed = (unarmed + 5)
     
-    return jsonify( barter=barter, energy_weapons=energy_weapons, explosives = explosives, guns=guns, lockpick=lockpick, medicine=medicine, melee_weapons=melee_weapons,\
+    return jsonify(barter=barter, energy_weapons=energy_weapons, explosives = explosives, guns=guns, lockpick=lockpick, medicine=medicine, melee_weapons=melee_weapons,\
         repair=repair, science=science, sneak=sneak, speech=speech, survival=survival, unarmed=unarmed, trait_1 = trait_1, trait_2 = trait_2)
