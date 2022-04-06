@@ -1,5 +1,5 @@
 #!/bin/bash
-declare -a directories=("special-api" "tags-api" "traits-api")
+declare -a directories=("special-api" "tags-api" "traits-api" "stats-api")
 for dir in "${directories[@]}"
 do
   cd ${dir}
