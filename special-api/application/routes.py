@@ -20,21 +20,19 @@ SpecialList = list(SpecialDict)
 
 def GenerateSpecial():
     for i in range(len(SpecialDict)):
-        print('i = ' + str(i)) #DEBUG
         r = random.randrange(1,10)
-        print(r) #DEBUG
         PointList[i] = r
-        print('points list int', PointList) #DEBUG
+        print('points list int', PointList) 
     if sum(PointList) == 40: #Highly unlikely   
         PrintSpecial(PointList)
-    elif sum(PointList) > 40: #bigger than
+    elif sum(PointList) > 40: 
         ChangeSpecial(PointList)
     elif sum(PointList) < 40:
         ChangeSpecial(PointList)
 
-def ChangeSpecial(PointList): #changes the points if there are to mant
-    if sum(PointList) > 40: #chceks to see if the sum of the points is bigger than the max points for the game
-        for i in range(len(PointList)): #might have to redo all of this 
+def ChangeSpecial(PointList):
+    if sum(PointList) > 40: 
+        for i in range(len(PointList)): 
             if sum(PointList) == 40:
                 PrintSpecial(PointList)
             elif PointList[i] == 1:
@@ -44,8 +42,8 @@ def ChangeSpecial(PointList): #changes the points if there are to mant
         PrintSpecial(PointList)
     elif sum(PointList) == 40: #if by some miracle the sum of the points is the max of the game the points will be printed out
         PrintSpecial(PointList)
-    elif sum(PointList) < 40: #checks to see if the sum of the points is smaller than the max points for the game
-        for i in range(len(PointList)): #might have to redo all of this 
+    elif sum(PointList) < 40:
+        for i in range(len(PointList)):
             if sum(PointList) == 40:
                 PrintSpecial(PointList)
             elif PointList[i] == 1:
