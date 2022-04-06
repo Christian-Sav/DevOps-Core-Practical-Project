@@ -7,12 +7,12 @@ SpecialDict = {
     'Perception' : 1,
     'Endurance' : 1,
     'Charisma' : 1,
-    'Intellegence' : 1,
+    'Intelligence' : 1,
     'Agility' : 1,
     'Luck' : 1
     } #Default starting points
 
-SpecialNameList = ['Strength','Perception','Endurance' ,'Charisma','Intellegence','Agility','Luck']
+SpecialNameList = ['Strength','Perception','Endurance' ,'Charisma','Intelligence','Agility','Luck']
 PointList = [1, 1, 1, 1, 1, 1, 1]
 SpecialList = list(SpecialDict)
 
@@ -62,7 +62,6 @@ def ChangeSpecial(PointList): #changes the points if there are to many
     else:
         return("Unknown Error")
     
-
 def PrintSpecial(PointsList):
     print('Points Used: ' + str(sum(PointsList)))
     for i in range(len(SpecialNameList)):
