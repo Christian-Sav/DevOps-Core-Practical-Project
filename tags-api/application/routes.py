@@ -11,9 +11,11 @@ def get_tags():
     tag_2 = choice(stats)
     tag_3 = choice(stats)
 
-    if tag_2 == tag_1 or tag_3:
+    if tag_2 == tag_1:
         tag_2 = choice(stats)
     elif tag_3 == tag_1:
         tag_3 = choice(stats)
+    elif tag_2 == tag_3:
+        tag_2 = choice(stats)
 
     return jsonify(tag_1=tag_1, tag_2=tag_2, tag_3=tag_3)
