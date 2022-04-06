@@ -14,6 +14,8 @@ class TestBase(TestCase):
 class TestViews(TestBase):
 
     def test_get_special(self):
-        response = self.client.get(url_for('get_special'))
-        self.assertEqual(response.status_code, 200)
-        self.assertIn(b'agility', response.data)
+       with patch('application.routes.randint') as r:
+           r.return_value = 2
+           response = self.client.get(url_for('get_special'))
+           self.assertEqual(response.status_code, 200)
+           self.assertIn(b'agility:2', response.data)
