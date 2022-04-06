@@ -16,6 +16,8 @@ SpecialNameList = ['Strength','Perception','Endurance' ,'Charisma','Intelligence
 PointList = [1, 1, 1, 1, 1, 1, 1]
 SpecialList = list(SpecialDict)
 
+@app.route('/get-special', methods=['GET'])
+
 def GenerateSpecial():
     for i in range(len(SpecialDict)):
         print('i = ' + str(i)) #DEBUG
@@ -29,13 +31,9 @@ def GenerateSpecial():
         ChangeSpecial(PointList)
     elif sum(PointList) < 40:
         ChangeSpecial(PointList)
-    else:
-        return("Unknown Error")
 
-def ChangeSpecial(PointList): #changes the points if there are to many
-    print('On ChangeSpecial()') #DEBUG
+def ChangeSpecial(PointList): #changes the points if there are to mant
     if sum(PointList) > 40: #chceks to see if the sum of the points is bigger than the max points for the game
-        print('On if sum > game')
         for i in range(len(PointList)): #might have to redo all of this 
             if sum(PointList) == 40:
                 PrintSpecial(PointList)
@@ -43,8 +41,6 @@ def ChangeSpecial(PointList): #changes the points if there are to many
                 continue
             elif PointList[i] > 1:
                 PointList[i] =- 1
-            else:
-                return("Unknown Error")
         PrintSpecial(PointList)
     elif sum(PointList) == 40: #if by some miracle the sum of the points is the max of the game the points will be printed out
         PrintSpecial(PointList)
@@ -56,20 +52,12 @@ def ChangeSpecial(PointList): #changes the points if there are to many
                 continue
             elif PointList[i] > 1:
                 PointList[i] =+ 1
-            else:
-                return("Unknown Error")
         PrintSpecial(PointList)
-    else:
-        return("Unknown Error")
     
 def PrintSpecial(PointsList):
-    print('Points Used: ' + str(sum(PointsList)))
     for i in range(len(SpecialNameList)):
         SpecialDict[SpecialNameList[i]] = PointList[i]
-        print(SpecialNameList[i] + ': ' + str(SpecialDict[SpecialNameList[i]]))
 
-
-@app.route('/get-special', methods=['GET'])
 def get_special():
 
     strength = SpecialDict["Strength"]
