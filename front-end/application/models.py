@@ -33,4 +33,4 @@ class Build(db.Model):
             \n Your Traits are: {self.trait_1} and {self.trait_2} \n And your skill totals are: \n Barter: {self.barter} \n Energy Weapons: {self.energy_weapons} \n Explosives: {self.explosives} \
             \n Guns: {self.guns} \n Lockpick: {self.lockpick} \n Medicine: {self.medicine} \n Melee Weapons: {self.melee_weapons} \n Repair: {self.repair} \n Science: {self.science} \
             \n Sneak: {self.sneak} \n Speech: {self.speech} \n Survival: {self.survival} \n Unarmed: {self.unarmed} \n I hope you enjoy this build!"
-        return build_full
+        return build_full.replace("_", " ")
