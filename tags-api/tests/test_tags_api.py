@@ -13,9 +13,9 @@ class TestBase(TestCase):
 
 class TestViews(TestBase):
 
-    def test_get_tags(self):
-        with patch('random.choices') as r:
-            r.return_value = "Barter", "Guns", "Lockpick"
-            response = self.client.get(url_for('get-tags'))
+    def test_tag_1(self):
+        with patch('application.routes.choice') as r:
+            r.return_value = 'Barter'
+            response = self.client.get(url_for('get_tags'))
             self.assertEqual(response.status_code, 200)
-            self.assertIn({"Barter", "Guns", "Lockpick"}, response.data)
+            self.assertIn(b'Barter', response.data)
