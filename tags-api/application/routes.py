@@ -6,14 +6,14 @@ stats = ("Barter", "Energy_Weapons", "Explosives", "Guns", "Lockpick", "Medicine
 
 @app.route('/get_tags', methods=['GET'])
 def get_tags():
+
     tag_1 = choice(stats)
     tag_2 = choice(stats)
     tag_3 = choice(stats)
 
-    while tag_2 == tag_1 or tag_3:
+    if tag_2 == tag_1 or tag_3:
         tag_2 = choice(stats)
-    
-    while tag_3 == tag_1:
+    elif tag_3 == tag_1:
         tag_3 = choice(stats)
 
     return jsonify(tag_1=tag_1, tag_2=tag_2, tag_3=tag_3)
