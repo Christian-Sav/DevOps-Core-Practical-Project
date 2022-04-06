@@ -13,9 +13,9 @@ class TestBase(TestCase):
 
 class TestViews(TestBase):
 
-    def test_get_trait(self):
-        with patch('random.choice') as r:
-            r.return_value = "Claustrophobia"
+    def test_trait_1(self):
+        with patch('application.routes.choice') as r:
+            r.return_value = 'Claustrophobia'
             response = self.client.get(url_for('get_trait'))
             self.assertEqual(response.status_code, 200)
             self.assertIn(b'Claustrophobia', response.data)
