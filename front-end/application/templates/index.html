@@ -5,7 +5,12 @@
 <h2 style="color: rgb(255,182,65)"> This Build: </h2>
 <br>
 
-<h4 style="color: rgb(255,182,65)">{{ build.__str__().replace('\n', '<br>') }}</h4>
+{% for stat in build.__str__().split('\n')  %}
+
+<h4 style="color: rgb(255,182,65)">{{stat}}</h4>
 
 <br>
+
+{% endfor %}
+
 {% endblock body %}
