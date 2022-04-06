@@ -5,7 +5,7 @@ from math import ceil
 @app.route('/get-stats', methods = ['POST'])
 def stats():
     request_data = request.get_json()
-    (strength) = request_data['strength']
+    strength = request_data['strength']
     perception = request_data['perception']
     endurance = request_data['endurance']
     charisma = request_data['charisma']

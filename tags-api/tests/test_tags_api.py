@@ -13,7 +13,9 @@ class TestBase(TestCase):
 
 class TestViews(TestBase):
 
-    def test_get_special(self):
-        response = self.client.get(url_for('get_special'))
-        self.assertEqual(response.status_code, 200)
-        self.assertIn(b'agility', response.data)
+    def test_get_tags(self):
+        with patch('random.choice') as r:
+            r.return_value = "Barter"
+            response = self.client.get(url_for('get-tags'))
+            self.assertEqual(response.status_code, 200)
+            self.assertIn(b'Barter', response.data)
