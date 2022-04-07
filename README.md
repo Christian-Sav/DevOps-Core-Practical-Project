@@ -54,7 +54,7 @@ After considering the brief presented I chose to develop an app to generate a ra
 
 In addition to these main services, a reverse proxy using NGINX was implemented; the NGINX service listens to port 80 on the host machine and performs a proxy pass, directing traffic from port 80 on the host to port 5000 on the front-end container, where the app is accessible. The images below show the front-end in action:
 
-![front-end](https://imgur.com/KTqiRQ4.png)
+![front-end](https://imgur.com/yyz1022.png)
 ![front-end](https://imgur.com/3xsR03p.png)
 
 Currently, The only route available is the home page, I plan to add a history page so you would be able to see previous builds as well but due to the mass of information displayed this is currently only in theory. The events are however stored in a database (currently an SQLite file), the ERD entity relationship diagram for this is below:
