@@ -35,7 +35,7 @@ As well as this there was also a constraint on the technologies that must be use
 ## Project Planning:
 During the planning phase for this project I undertook a full risk assessment in order to possibly identify any hazards assossiated with this project, the resulting risk assessment is below:
 
-![risk assessment](https://imgur.com/a/0k1day3)
+![risk assessment](https://imgur.com/j0O9ee8)
 
 As there is no data submitted by users to the app the risks presented are operational risk more assossiated with the deployment or the build of the app.
 
@@ -54,7 +54,8 @@ After considering the brief presented I chose to develop an app to generate a ra
 
 In addition to these main services, a reverse proxy using NGINX was implemented; the NGINX service listens to port 80 on the host machine and performs a proxy pass, directing traffic from port 80 on the host to port 5000 on the front-end container, where the app is accessible. The images below show the front-end in action:
 
-![front-end](https://imgur.com/a/liy3hGP)
+![front-end](https://imgur.com/KTqiRQ4)
+![front-end](https://imgur.com/3xsR03p)
 
 Currently The only route availiable is the home page, I plan to add a history page so you would be able to see previous builds as well but due to the mass of information displayed this is currently only in theory. The events are however stored in a database (currently an sqlite file), the ERD entity relationship diagram for this is below:
 
