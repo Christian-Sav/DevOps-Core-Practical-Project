@@ -34,7 +34,7 @@ def stats():
 
     if st_trait_1 == st_trait_2:
         st_trait_2 == "None"
-    elif st_trait_1 or st_trait_2 == 'Claustrophobia':
+    elif st_trait_1 == 'Claustrophobia' or st_trait_2 == 'Claustrophobia':
         st_strength = (st_strength + 1)
         st_perception = (st_perception + 1)
         st_endurance = (st_endurance + 1)
@@ -42,7 +42,7 @@ def stats():
         st_intelligence = (st_intelligence + 1)
         st_agility = (st_agility + 1)
         st_luck = (st_luck + 1)
-    elif st_trait_1 or st_trait_2 == 'Early_Bird':
+    elif st_trait_1 == 'Early_Bird' or st_trait_2 == 'Early_Bird':
         st_strength = (st_strength + 2)
         st_perception = (st_perception + 2)
         st_endurance = (st_endurance + 2)
@@ -50,9 +50,9 @@ def stats():
         st_intelligence = (st_intelligence + 2)
         st_agility = (st_agility+ 2)
         st_luck = (st_luck + 2)
-    elif st_trait_1 or st_trait_2 == 'Four_Eyes':
+    elif st_trait_1 == 'Four_Eyes' or st_trait_2 == 'Four_Eyes':
         st_perception = (st_perception - 1)
-    elif st_trait_1 or st_trait_2 == 'Small_Frame':
+    elif st_trait_1 == 'Small_Frame' or st_trait_2 == 'Small_Frame':
         st_agility = (st_agility + 1)
 
 # establashing affects of triats
@@ -104,38 +104,37 @@ def stats():
     
 #calculating stats
 
-    if st_tag_1 or st_tag_2 or st_tag_3 == "Barter":
+    if st_tag_1 == "Barter" or st_tag_2 == "Barter" or st_tag_3 == "Barter":
         barter = (barter + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == "Energy_Weapons":
+    elif st_tag_1 == "Energy_Weapons" or st_tag_2 == "Energy_Weapons" or st_tag_3 == "Energy_Weapons":
         energy_weapons = (energy_weapons + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == "Explosives":
+    elif st_tag_1 == "Explosives" or st_tag_2 == "Explosives" or st_tag_3 == "Explosives":
         explosives = (explosives + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == "Guns":
+    elif st_tag_1 == "Guns" or st_tag_2 == "Guns" or st_tag_3 == "Guns":
         guns = (guns + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == "Lockpick":
+    elif st_tag_1 == "Lockpick" or st_tag_2 == "Lockpick" or st_tag_3 == "Lockpick":
         lockpick = (lockpick + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == "Medicine":
+    elif st_tag_1 == "Medicine" or st_tag_2 == "Medicine" or st_tag_3 == "Medicine":
         medicine = (medicine + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == "Melee_Weapons":
+    elif st_tag_1 == "Melee_Weapons" or st_tag_2 == "Melee_Weapons" or st_tag_3 == "Melee_Weapons":
         melee_weapons = (melee_weapons + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == "Repair":
+    elif st_tag_1 == "Repair" or st_tag_2 == "Repair" or st_tag_3 == "Repair":
         repair = (repair + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == "Science":
+    elif st_tag_1 == "Science" or st_tag_2 == "Science" or st_tag_3 == "Science":
         science = (science + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == "Sneak":
+    elif st_tag_1 == "Sneak" or st_tag_2 == "Sneak" or st_tag_3 == "Sneak":
         sneak = (sneak + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == "Speech":
+    elif st_tag_1 == "Speech" or st_tag_2 == "Speech" or st_tag_3 == "Speech":
         speech = (speech + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == "Survival":
+    elif st_tag_1 == "Survival" or st_tag_2 == "Survival" or st_tag_3 == "Survival":
         survival = (survival + 15)
-    elif st_tag_1 or st_tag_2 or st_tag_3 == "Unarmed":
+    elif st_tag_1 == "Unarmed" or st_tag_2 == "Unarmed" or st_tag_3 == "Unarmed":
         unarmed = (unarmed + 15)
-    else:
-        barter = barter
+
 
 # adding traits to stats
 
-    if st_trait_1 or st_trait_2 == 'Good_Natured' :
+    if st_trait_1 == 'Good_Natured' or st_trait_2 == 'Good_Natured':
         barter = (barter + 5)
         medicine = (medicine + 5)
         repair = (repair + 5) 
@@ -145,7 +144,7 @@ def stats():
         explosives = (explosives - 5)
         guns = (guns - 5)
         melee_weapons = (melee_weapons - 5)
-    elif st_trait_1 or st_trait_2 == 'Skilled' :
+    elif st_trait_1  == 'Skilled' or st_trait_2 == 'Skilled':
         barter = (barter + 5)
         energy_weapons = (energy_weapons + 5)
         explosives = (explosives + 5)
