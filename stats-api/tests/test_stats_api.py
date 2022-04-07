@@ -22,9 +22,9 @@ class TestViews(TestBase):
 class TestViews(TestBase):
     def test_tags(self):
         response = self.client.post(url_for('stats'),
-        json={"strength":1, "perception":1, "endurance":1, "charisma":1, "intelligence":1, "agility":1, "luck":1, "st_trait_1":"Heavy_Handed", "st_trait_2":"Hot_Blooded", \
-        "st_tag_1":"Barter", "st_tag_2":"Energy_Weapons", "tag_3":"Explosives"})
+        json={"strength":1, "perception":1, "endurance":1, "charisma":1, "intelligence":1, "agility":1, "luck":1, "trait_1":"Heavy_Handed", "trait_2":"Hot_Blooded", \
+        "tag_1":"Barter", "tag_2":"Energy_Weapons", "tag_3":"Explosives"})
         self.assert200(response)
-        self.assertIn(b'{"barter":20', response.data)
-        self.assertIn(b'{"Energy_Weapons":20', response.data)
-        self.assertIn(b'{"Explosives":20', response.data)
+        self.assertIn(b'{"barter":20, energy_weapons:20, explosives:20, gun:5, lockpick:5, medicine:5, melee_weapons:5,\
+            repair:5, science:5, sneak:5, speech:5, survival:5, unarmed:5, trait_1="Heavy_Handed", trait_2="Hot_Blooded"}', response.data)
+        
