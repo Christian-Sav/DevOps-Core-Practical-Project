@@ -59,10 +59,11 @@ In addition to these main services, a reverse proxy using NGINX was implemented;
 
 Currently The only route availiable is the home page, I plan to add a history page so you would be able to see previous builds as well but due to the mass of information displayed this is currently only in theory. The events are however stored in a database (currently an sqlite file), the ERD entity relationship diagram for this is below:
 
-{ERD}
+![ERD](https://imgur.com/Uk6Nhbk.png)
 
 The microservice architecture is below:
 
+![Architecture](https://imgur.com/5CK03WZ.png)
 
 ## CI Pipeline:
 
@@ -76,17 +77,17 @@ As mentioned previously this project does use a complete CI/CI pipeline in order
 
 During this project Jira was used for project tracking. Each task that was needed was assigned a story point, acceptance criteria and a MoSCoW prioritisation and then moved from Project Backlog to Sprint Backlog to To Do then to In Progress and eventually to done as the project was progressed. Below is a snippet of my jira board mid project:
 
-{jira board}
+![Jira Board](https://imgur.com/BfjpHCg.png)
 
 For the version control I used git with the project repository being hosted on github, using git for version control allowed for easy access to the commit history for access to earlier versions whilst changes are being made and committed to the project. GitHub as a repository hosting service means that the actual repositoy for the project is sotred far away from the development environment this as well as providing webhooks which send http POST requests to the build server to automate building and testing made GitHub a valuable choice. A feature branch model was implemented in the project as to seperate the stable version of the application from the ongoing development on the feature branch.
 
-{feature branch model}
+![feature branch model](https://imgur.com/120tMRD.png)
 
 The development enviroment used was a Ubuntu virtual machine hosted on GCP and accessed through VSCode.
 
 For this project Jenkins was used as a CI server. In response to the previously mentioned github webhook Jenkins clones down the project repo and executes the pipeline script that is defined within the Jenkinsfile. There are 4 stages to the pipeline: There is Unit testing, Building and Pushing to Docker, Deploying on the Swarm Manager and worker using Docker Compose and finally the post-build actions. During the Unit testing a bash script (test.sh) cycles through each of the dirctories of the five services and runs their unit tests using pytest.
 
-The front-end and all of the API;s all had unit tests written for them to test ALL areas of functionality. In order to test the HTTP requests that are being made by the front-end requests_mock was used to simulate responses from the APIs. In order to test the functionality of the APIs either random.choice or random.randint was patched with the unittest.mock to ensure reproducable test performance. The result of the tests are archived as a serperate coverage report for each service as HTML file artifacts after the build is completed. These are the coverage reports for the seperate services:
+The front-end and all of the APIs all had unit tests written for them to test ALL areas of functionality. In order to test the HTTP requests that are being made by the front-end requests_mock was used to simulate responses from the APIs. In order to test the functionality of the APIs either random.choice or random.randint was patched with the unittest.mock to ensure reproducable test performance. The result of the tests are archived as a serperate coverage report for each service as HTML file artifacts after the build is completed. These are the coverage reports for the seperate services:
 
 {front-end test}
 {special test}
@@ -94,6 +95,7 @@ The front-end and all of the API;s all had unit tests written for them to test A
 {trait test}
 {stat test}
  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+If all of the tests performed were successful then the next stage Build and Push would commence, during this
 
 If the tests are successful, the build/push stage uses docker-compose to build the images for the different services, logs into docker using credentials configured on the Jenkins VM, and then pushes the images to Dockerhub. The use of a Jenkins pipeline, with this stage-by-stage breakdown, makes optimisation of the project easier. For example, initially all pip installs, for tests and deployment, were done using one requirements file, which meant that testing modules were being installed when building the images; since this was not necessary and since the build/push stage was the longest stage in the pipeline the requirements were separated into a requirements.txt file, containing only the pip installs needed to run the app, and a test_requirements.txt file, which contained all requirements including testing modules. This eliminated unnecessary pip installs during the build stage
 
@@ -113,9 +115,11 @@ Successful stages appear green, unstable builds are indicated by yellow stages, 
 
 The overall structure of the CI/CD pipeline is:
 
-{structure}
+![structure](https://imgur.com/mVARq97.png)
 
 ## Known Issues:
+Through the project I have encounted some small issues, the msot noticable in code being the test variable in the special-api. This is as the maximum special total is 40 and in order to test the output by patching randint to a value I needed a even amount of variables, before resolution this greatly increased the Unit test stage of my CI pipeline as it would loop until timing out. 
 
 ## Future Work;
 THe first future implementation that I am striving for is to include a history page to display past builds so a build is not lost once a new one is genrated.
+As well As this I would liek to add more services in order to generate more options for the Build such as companions, alliances and play style.
