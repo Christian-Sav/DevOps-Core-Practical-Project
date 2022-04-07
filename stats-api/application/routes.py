@@ -185,4 +185,4 @@ def stats():
     # adding traits to stats
     
     return jsonify(barter=barter, energy_weapons=energy_weapons, explosives = explosives, guns=guns, lockpick=lockpick, medicine=medicine, melee_weapons=melee_weapons,\
-        repair=repair, science=science, sneak=sneak, speech=speech, survival=survival, unarmed=unarmed, trait_1=st_trait_1, trait_2=st_trait_2)
+        repair=repair, science=science, sneak=sneak, speech=speech, survival=survival, unarmed=unarmed, trait_1=st_trait_1, trait_2=st_trait_2 )
