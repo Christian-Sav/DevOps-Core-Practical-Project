@@ -40,3 +40,4 @@ class TestView(TestBase):
                 Lockpick and Medicine \n Your Traits are: Heavy Handed and Hot Blooded \n And your skill totals are: \n Barter: 5 \
                 \n Energy Weapons: 5 \n Explosives: 5 \n Guns: 20 \n Lockpick: 20 \n Medicine: 20 \
                 \n Melee Weapons: 5 \n Repair: 5 \n Science: 5 \n Sneak: 5 \n Speech: 5 \n Survival: 5 \n Unarmed: 5 \n I hope you enjoy this build!', response.data)
+            self.assertNotIn(b"_")
