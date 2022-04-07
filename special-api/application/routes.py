@@ -21,7 +21,9 @@ def get_special():
 
     luck = randint(1,10)
 
-    while strength + perception + endurance + charisma + intelligence + agility + luck != total_special:
+    test = randint(0,0)
+
+    while strength + perception + endurance + charisma + intelligence + agility + luck + test != total_special:
 
         strength = randint(1,10)
 
@@ -36,5 +38,7 @@ def get_special():
         agility = randint(1,10)
 
         luck = randint(1,10)
+
+        test = randint(0,0)
 
     return jsonify(strength=strength, perception=perception, endurance=endurance, charisma=charisma, intelligence=intelligence, agility=agility, luck=luck)
