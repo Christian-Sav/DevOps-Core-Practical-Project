@@ -14,7 +14,7 @@ class TestBase(TestCase):
 class TestViews(TestBase):
     def test_get_stast(self):
         response = self.client.post(url_for('stats'),
-        json={"strength":7, "perception":10, "endurance":3, "charisma":9, "intelligence":1, "agility":5, "luck":5, "trait_1":"Heavy_Handed", "trait_2":"Hot_Blooded", \
+        json={"strength":1, "perception":1, "endurance":1, "charisma":1, "intelligence":1, "agility":1, "luck":1, "trait_1":"Heavy_Handed", "trait_2":"Hot_Blooded", \
         "tag_1":"Explosives", "tag_2":"Unarmed", "tag_3":"Lockpick"})
         self.assert200(response)
-        self.assertIn(b'{"barter":45', response.data)
+        self.assertIn(b'{"barter":5', response.data)
