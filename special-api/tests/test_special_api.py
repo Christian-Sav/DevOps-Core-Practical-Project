@@ -8,7 +8,6 @@ class TestBase(TestCase):
     def create_app(self):
         return app
 
-
 class TestViews(TestBase):
 
     def test_get_special(self):
