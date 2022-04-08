@@ -108,9 +108,7 @@ As an average of my percentages, my total coverage for the project is just over 
 
 If all of the tests performed are successful then the next stage Build and Push will commence, during this docker-compose is used to build the images for all of the different services, docker is logged into using stored credentials configured on the Jenkins VM, the images are then pushed to Docker hub. Thankfully using a Jenkins pipeline makes optimisation of the project much easier instead of manually building and then pushing all of the required images. As well as this the requirements for testing and general operation have been split into separate files, which means only modules necessary for either tests or deployment are installed when they're required, making this change improved the speed at which the build and push stage is completed. 
 
-Following the build and push, the deploy stage deploys the application. First the docker-compose.YAML and Nginx.conf files are copied to the manager node by secure copy (SCP). Then, an Ansible playbook is used to run three roles: the first installs docker on the swarm machines if it is not present already and adds Jenkins to the docker group, the second initialises a swarm on the manager node and uses the Ansible docker stack module to deploy the application, and the third adds the worker node to the swarm. This creates an overlay network as follows:
-
-![Overlay Network](https://imgur.com/I7kpQSw.png)
+Following the build and push, the deploy stage deploys the application.
 
 Finally, in the post-build stage, the coverage reports are archived as artefacts and successful stages appear green, unstable builds are indicated by yellow stages, and failures are indicated via red stages. If a stage fails, later stages will be skipped, preventing failed versions from being deployed, this can be seen here:
 
