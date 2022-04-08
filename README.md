@@ -112,13 +112,9 @@ Following the build and push, the deploy stage deploys the application. First th
 
 ![Overlay Network](https://imgur.com/I7kpQSw.png)
 
-Finally, in the post-build stage, the coverage reports are archived as artefacts:
+Finally, in the post-build stage, the coverage reports are archived as artefacts and successful stages appear green, unstable builds are indicated by yellow stages, and failures are indicated via red stages. If a stage fails, later stages will be skipped, preventing failed versions from being deployed, this can be seen here:
 
-{stage view}
-
-Successful stages appear green, unstable builds are indicated by yellow stages, and failures are indicated via red stages. If a stage fails, later stages will be skipped, preventing failed versions from being deployed, this can be seen here:
-
-{pipeline}
+![pipeline](https://imgur.com/XNj0Q2X.png)
 
 The overall structure of the CI/CD pipeline is:
 
