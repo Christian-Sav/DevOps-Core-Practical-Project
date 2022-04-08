@@ -114,9 +114,6 @@ Finally, in the post-build stage, the coverage reports are archived as artefacts
 
 ![pipeline](https://imgur.com/XNj0Q2X.png)
 
-The overall structure of the CI/CD pipeline is:
-
-![structure](https://imgur.com/mVARq97.png)
 
 ## Known Issues:
 During the final stages of my project my Jenkins VM developed an issue and became nonassessable, I was required to create an entirely new VM and go through the beginning steps of the project again, thankfully this was only a short process and I was back to work in under an hour.
